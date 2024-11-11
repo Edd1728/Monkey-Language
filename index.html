@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monkey Language Translator</title>
+    <style>
+        /* Background and general styling */
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-image: url('https://media.istockphoto.com/id/1401883162/vector/beautiful-jungle.jpg?s=612x612&w=0&k=20&c=zmNUPQ179Tf7vRCIWdC15I0_sFJeBppRos-L84NZoeM='); /* Jungle background */
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: #3d3d3d;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #4CAF50;
+            text-shadow: 2px 2px 4px #000000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Monkey icon next to heading */
+        .monkey-icon {
+            width: 50px;
+            height: 50px;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        /* Text area styling */
+        textarea {
+            width: 80%;
+            max-width: 600px;
+            height: 100px;
+            padding: 10px;
+            border-radius: 8px;
+            border: 2px solid #4CAF50;
+            font-size: 1em;
+            resize: none;
+            margin-bottom: 20px;
+            background-color: #f5fffa;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Button styling with hover effect */
+        button {
+            background-color: #ff5722;
+            color: white;
+            padding: 15px 32px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #e64a19;
+            transform: scale(1.05);
+        }
+
+        /* Output box styling */
+        #output {
+            margin-top: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #ff5722;
+            width: 80%;
+            max-width: 600px;
+            word-wrap: break-word;
+            background-color: #fff8e1;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            text-align: center;
+            overflow-wrap: break-word;
+            white-space: pre-wrap;
+        }
+
+        /* Container styling */
+        .container {
+            width: 80%;
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>
+            <img src="https://cdn-icons-png.flaticon.com/512/4590/4590577.png" alt="Monkey Icon" class="monkey-icon"> <!-- Monkey icon -->
+            Monkey Language Translator
+        </h1>
+        <p>Enter a sentence, and watch it transform into monkey language!</p>
+        <textarea id="inputText" placeholder="Type your sentence here..."></textarea><br>
+        <button onclick="translateToMonkey()">Translate to Monkey Language</button>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        function translateToMonkey() {
+            const text = document.getElementById("inputText").value;
+            const monkeyText = text.replace(/[aeiouAEIOU]/g, () => Math.random() > 0.5 ? "ooh ooh" : "ah ah");
+            document.getElementById("output").textContent = monkeyText;
+        }
+    </script>
+</body>
+</html>
